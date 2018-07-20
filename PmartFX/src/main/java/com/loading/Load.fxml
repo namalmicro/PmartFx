@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="loadAnchorPane" prefHeight="157.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.loading.LoadController">
+   
+   <children>
+   
+      <ProgressBar fx:id="pbar" layoutX="63.0" layoutY="70.0" prefHeight="14.0" prefWidth="200.0" progress="0.0" />
+      <ProgressIndicator fx:id="pindicator" layoutX="292.0" layoutY="63.0" prefHeight="39.0" prefWidth="37.0" progress="0.0" />
+   
+   
+   </children>
+	
+</AnchorPane>

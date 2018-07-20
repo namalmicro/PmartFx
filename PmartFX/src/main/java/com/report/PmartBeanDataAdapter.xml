@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beanDataAdapter class="net.sf.jasperreports.data.bean.BeanDataAdapterImpl"><name>BeanDataAdapter</name><factoryClass>com.jaspersoft.studio.data.sample.SampleJRDataSourceFactory</factoryClass><methodName>createBeanCollection</methodName><useFieldDescription>true</useFieldDescription></beanDataAdapter>
