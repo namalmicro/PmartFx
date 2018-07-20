@@ -12,12 +12,15 @@ public class MainApp extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("user/User.fxml"));
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/com/loading/Load.fxml"));
+			
 			//Scene scene = new Scene(root,890,360); // pmart window
 			//Scene scene = new Scene(root,385,170); // load window
 			//Scene scene = new Scene(root,1100,520); // Tab Window 
 			//Scene scene = new Scene(root,470,200); // Login Window 
-			Scene scene = new Scene(root,640,400);
+			//Scene scene = new Scene(root,640,400); // User Registered Window
+			
+			Scene scene = new Scene(root,385,170); // load window
 			
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);

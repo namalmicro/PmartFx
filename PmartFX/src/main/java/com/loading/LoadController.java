@@ -47,13 +47,13 @@ public class LoadController implements Initializable {
 			Stage primaryStage2 = new Stage();
 			
 			try {
-				AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/com/pmart/Pmart.fxml"));
-				Scene scene = new Scene(root,890,360);
+				AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/com/pmart/user/User.fxml"));
+				Scene scene = new Scene(root,640,400);
 				scene.getStylesheets().add(getClass().getResource("/com/pmart/application.css").toExternalForm());
 				primaryStage2.setScene(scene);
 				//primaryStage.initOwner(mainAnchorPane.getScene().getWindow());
 				//primaryStage.setTitle("Micro Cars - Item Master File");
-				primaryStage2.setTitle("Product Mart");
+				//primaryStage2.setTitle("Product Mart");
 				
 				primaryStage2.show();
 			

@@ -15,15 +15,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
 public class UserController implements Initializable {
@@ -117,8 +120,34 @@ public class UserController implements Initializable {
 		
 		if(isValidEmail && isPasswordMatched) {
 			
-			lblEmailError.setText("Valid Email.");
-			lblPasswordError.setText("Valid Password.");
+			//lblEmailError.setText("Valid Email.");
+			//lblPasswordError.setText("Valid Password.");
+			
+			try {
+				
+				String insert = "INSERT INTO users(email,upassword,firstname,lastname,roleid) VALUES (?,?,?,?,?)";
+				
+				pst = conn.prepareStatement(insert);
+				pst.setString(1, txtEmail.getText());
+				pst.setString(2, txtPassword.getText());
+				pst.setString(3, txtFirstName.getText());
+				pst.setString(4, txtLastName.getText());
+				pst.setString(5, cmbRoleName.getValue().getRoleID());
+				
+				int i = pst.executeUpdate();
+				
+				if(i == 1) {
+					Alert alert = new Alert(AlertType.INFORMATION, "User registered sucessfully!.", ButtonType.OK);
+					alert.show();
+				}
+				
+			}catch (Exception ex) {
+				Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+				
+			}
+			
+			
+			
 			
 		}
 		
@@ -128,6 +157,29 @@ public class UserController implements Initializable {
 	@FXML
 	public void handleSignIn(ActionEvent event) {
 		
+Stage primaryStage = new Stage();
+		
+		try {
+			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/com/pmart/Login.fxml"));
+			Scene scene = new Scene(root,470,200);
+			//scene.getStylesheets().add(getClass().getResource("/pmart/application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.initOwner(userAnchorPane.getScene().getWindow());
+			//primaryStage.initModality(Modality.WINDOW_MODAL);
+			//Image icon = new Image(getClass().getResourceAsStream("/img/company-logo.png"));
+			//primaryStage.getIcons().add(icon);
+			//primaryStage.setResizable(true);
+			//primaryStage.setMinHeight(400);
+			//primaryStage.setMinWidth(850);
+			//primaryStage.setTitle("Micro Cars - Item Master File");
+			//primaryStage.initStyle(StageStyle.DECORATED);
+			//primaryStage.setResizable(false);
+			primaryStage.show();
+		
+		} catch(Exception e) {
+			e.printStackTrace();
+			System.out.println("Couldn't load the User Login Window");
+		}
 		
 		
 	}

@@ -27,8 +27,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-import javafx.stage.Window;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -270,7 +268,7 @@ public class OrderProductController implements Initializable {
 
 	private void priceInvoice() {
 		
-		String sourceFile = "F:\\Yohan's Works\\My Java Pro\\PmartFX\\src\\main\\java\\com\\report\\Invoice.jrxml";
+		String sourceFile = "G:\\GitRepository\\HomeProjects\\PmartFXLocal\\PmartFX\\src\\main\\java\\com\\report\\Invoice.jrxml";
 		
 		try {
 			
