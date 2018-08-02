@@ -157,7 +157,7 @@ public class UserController implements Initializable {
 	@FXML
 	public void handleSignIn(ActionEvent event) {
 		
-Stage primaryStage = new Stage();
+		Stage primaryStage = new Stage();
 		
 		try {
 			AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().getResource("/com/pmart/Login.fxml"));
